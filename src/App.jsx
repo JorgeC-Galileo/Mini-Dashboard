@@ -17,13 +17,20 @@ return(
       <div className="d-flex align-items-center">
         <Form.Control
         type="text"
-        placeholder=""
+        placeholder="Ingresa una tarea"
+        value={taskDescription}
+       onChange={(e)=> setTaskDescription(e.target.value) }
+       className="mr-2"
         />
-      </Form.Group>
+  <Button variant="success" type="submit" className="d-flex align-items-center" >     
+  Agregar Tarea 
+    </Button>
+  </div>
+   </Form.Group>
     </Form>
 );
 
-
+//TaskListComponent 
 
 
 };
