@@ -29,8 +29,30 @@ return(
    </Form.Group>
     </Form>
 );
-
-//TaskListComponent 
-
-
 };
+//TaskListComponent 
+const TaskList=({tasks,onDeleteTask})=>{
+return (
+  <>
+<h2>{tasks.length}Tareas Pendientes</h2>
+<Row xs={1} sm={2} md={2} lg={3} className="g-4">
+    {tasks.map((task,index)=>(
+      <Col key={index }>
+    <div style={{backgroundColor:'black', borderColor:'#8B4513',marginBottom:'20px',padding:'10px' }}>
+      <div style={{color:'white'}}>
+        {task.description}</div>
+        <Button variant="danger" size="sm" onClick={()=>onDeleteTask(index)}> Eliminar </Button>
+        </div>
+        </Col>
+))}  
+    
+  </Row>
+
+<Button variant="danger"  onClick={()=>onDeleteTask('all')} className="mt-4">
+  Borrar Todos
+  </Button> 
+</>
+);
+    };
+
+//
